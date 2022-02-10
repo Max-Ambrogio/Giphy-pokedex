@@ -31,12 +31,13 @@ let parent = document.querySelector('.main-pokedex')
 let type = document.querySelector('.type h1')
 let height = document.querySelector('.height h1')
 let dpad = document.querySelector('.dpad')
+let poke = pokedex.pokemon
+
 console.log(nameInput.value)
 
 function logKey(e) {
 	console.log(nameInput.value)
   }
-
 
 let refresh = function(){
 	
@@ -55,11 +56,13 @@ let refresh = function(){
 	getGif( nameInput.value , function(gifData){
 		NewImage.setAttribute('src' , gifData[9].images.original.url) 
 	})
-	
 	// pokedex.pokemon.name(nameInput.value)
 }
 
-
+	let pokeName = poke.find(function(pokemon){
+		return pokemon.name.includes('Charizard')
+	})
+	console.log(pokeName)
 
 refresh()
 nameInput.addEventListener('keypress' , refresh);
