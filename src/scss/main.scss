@@ -1,0 +1,154 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+@import 'reset';
+// font-family: 'Acme', sans-serif;
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #ccc;
+}
+
+/* 2. Content ================================= */
+
+svg{
+	height: 500px;
+}
+
+.text-box{
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+
+.title{
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 65px;
+	font-family: 'Acme', sans-serif;
+
+	img{
+		height: 100px;
+	}
+
+	h1{
+		font-size: 20px;
+		margin-top: 20px;
+	}
+}
+
+.created-img{
+	top: 30%;
+	left: 10%;
+    position: absolute;
+    z-index: -2;
+	height: 30%;
+	width: 32%;
+}
+
+
+.main-pokedex{
+	// text-align: center;
+	position: relative;
+
+	.pokedex{
+		// height: 600px;
+		width: 100%;
+	}
+
+	.text-input{
+
+		.text{
+			position: absolute;
+			top:33.283422%;
+			left: 60.834766%;
+			width: percentage(333/1047);
+			height: percentage(118/748);
+			border-top-style: hidden;
+			border-right-style: hidden;
+			border-left-style: hidden;
+			border-bottom-style: groove;
+			background-color: rgba($color: #000000, $alpha: 0);
+			font-family: 'Orbitron', sans-serif;
+			font-size: 2.5vw;
+			font-weight: 800;
+			color: rgb(0, 0, 0);
+			text-shadow:
+			0 0 2px rgb(0, 255, 72),
+			0 0 8px rgb(0, 255, 8),
+		}
+		
+	}
+
+	.dpad{
+		position: absolute;
+		z-index: 2;
+		top: percentage(550/748);
+		left: percentage(340/1047);
+		width: percentage(126/1047);
+	}
+
+	.type{
+		background-color: black;
+		font-family: 'Orbitron', sans-serif;
+		font-weight: 800;
+		color: rgb(0, 0, 0);
+		text-shadow:
+		0 0 2px rgb(0, 255, 72),
+		0 0 8px rgb(0, 255, 8);
+		width: percentage(153/1047);
+		height: percentage(54/748);
+		right: percentage(79/1047);
+		bottom: percentage(67/748);
+		position: absolute;
+		display: flex;
+
+		h1{
+			align-self: center;
+			place-content: center;
+			padding-left: 10%;
+			font-size: 1.6vw;
+		}
+	}
+	.height{
+		background-color: black;
+		font-family: 'Orbitron', sans-serif;
+		font-weight: 800;
+		color: rgb(0, 0, 0);
+		text-shadow:
+		0 0 2px rgb(0, 255, 72),
+		0 0 8px rgb(0, 255, 8);
+		width: percentage(153/1047);
+		height: percentage(54/748);
+		right: percentage(259/1047);
+		bottom: percentage(67/748);
+		position: absolute;
+		display: flex;
+
+		h1{
+			align-self: center;
+			place-content: center;
+			padding-left: 10%;
+			font-size: 2vw;
+		}
+	}
+}
