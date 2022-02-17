@@ -25,7 +25,7 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background: #ccc;
+	background: rgb(162, 159, 159);
 }
 
 /* 2. Content ================================= */
@@ -39,16 +39,17 @@ svg{
 	margin-bottom: 50px;
 }
 
+.main-title{
+		height: 100px;
+		opacity: 0;
+		transition: opacity 2s ease-in-out;
+	}
 
 .title{
 	text-align: center;
 	margin-top: 40px;
 	margin-bottom: 65px;
 	font-family: 'Acme', sans-serif;
-
-	img{
-		height: 100px;
-	}
 
 	h1{
 		font-size: 20px;
@@ -69,10 +70,44 @@ svg{
 .main-pokedex{
 	// text-align: center;
 	position: relative;
+	opacity: 0;
+	transition: opacity 3s ease-in;
 
 	.pokedex{
 		// height: 600px;
 		width: 100%;
+	}
+
+	.show{
+		opacity: 0;
+	}
+
+	.glow-yellow{
+		position: absolute;
+		left: 20.725883%;
+  		top: percentage(15/748);
+		height: percentage(47/1047);
+		opacity: 1;
+		transition-duration: 200ms;
+		transition-property: opacity;
+	}
+	.glow-red{
+		position: absolute;
+		left:percentage(175/1047);
+		top: percentage(15/748);
+		height: percentage(47/1047);
+		opacity: 1;
+		transition-duration: 200ms;
+		transition-property: opacity;
+	}
+	.glow-green{
+		position: absolute;
+		left: percentage(260/1047);
+		top: percentage(15/748);
+		height: percentage(47/1047);
+		opacity: 1;
+		transition-duration: 200ms;
+		transition-property: opacity;
 	}
 
 	.text-input{
@@ -108,7 +143,7 @@ svg{
 	}
 
 	.type{
-		background-color: black;
+		// background-color: black;
 		font-family: 'Orbitron', sans-serif;
 		font-weight: 800;
 		color: rgb(0, 0, 0);
@@ -130,7 +165,7 @@ svg{
 		}
 	}
 	.height{
-		background-color: black;
+		// background-color: black;
 		font-family: 'Orbitron', sans-serif;
 		font-weight: 800;
 		color: rgb(0, 0, 0);
@@ -151,4 +186,8 @@ svg{
 			font-size: 2vw;
 		}
 	}
+}
+
+.load{
+	opacity: 1;
 }

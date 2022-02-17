@@ -32,12 +32,32 @@ let type = document.querySelector('.type h1')
 let height = document.querySelector('.height h1')
 let dpad = document.querySelector('.dpad')
 let poke = pokedex.pokemon
+let red = document.querySelector('.glow-red')
+let green = document.querySelector('.glow-green')
+let yellow = document.querySelector('.glow-yellow')
+let title = document.querySelector('.main-title')
+
+function getRandom(max) {
+	return Math.floor(Math.random() * max);
+  }
 
 console.log(nameInput.value)
 
-function logKey(e) {
-	console.log(nameInput.value)
-  }
+// function logKey(e) {
+// 	console.log(nameInput.value)
+//   }
+
+parent.classList.add('load')
+title.classList.add('load')
+
+let glow = setTimeout( function(){
+	 red.classList.add('show')
+	 yellow.classList.add('show')
+	 green.classList.add('show')
+} , 1000 )
+
+
+
 
 let refresh = function(){
 	
@@ -47,25 +67,36 @@ let refresh = function(){
 		NewImage.setAttribute('src' , gifData[0].images.original.url)
 		NewImage.classList.add('created-img')
 		parent.append (NewImage)
-
-		type.innerText = pokedex.pokemon[0].type
-		
-		height.innerText = pokedex.pokemon[0].height
 	})
-
-	getGif( nameInput.value , function(gifData){
-		NewImage.setAttribute('src' , gifData[9].images.original.url) 
-	})
-	// pokedex.pokemon.name(nameInput.value)
-}
 
 	let pokeName = poke.find(function(pokemon){
-		return pokemon.name.includes('Charizard')
+		return pokemon.name.toLowerCase().includes(nameInput.value.toLowerCase())
 	})
-	console.log(pokeName)
 
-refresh()
+	type.innerText = pokeName.type
+	height.innerText = pokeName.height
+	
+	console.log(pokeName)
+}
+
+let random = function(){
+	getGif( nameInput.value , function(gifData){
+		let randomImage = document.createElement("img")
+		randomImage.setAttribute('src' , gifData[getRandom(50)].images.original.url)
+		randomImage.classList.add('created-img')
+		parent.append (randomImage) 
+	})
+}
+
+let nextEvolution = function(){
+	poke.find(function(pokemon){
+		return pokemon.name.toLocaleLowerCase().includes(nameInput.value.toLocaleLowerCase())
+	})
+	console.log(nextEvolution.next_evolution.name)
+}
+
 nameInput.addEventListener('keypress' , refresh);
-dpad.addEventListener('click' , refresh)
+dpad.addEventListener('click' , random)
+// dpad.addEventListener('click' , nextEvolution)
 
 
